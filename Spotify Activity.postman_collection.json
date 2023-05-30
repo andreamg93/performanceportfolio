@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "38a90ecb-c453-4bf0-a18f-23d18c1b1a7c",
+		"name": "Spotify Activity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26857480",
+		"_collection_link": "https://martian-capsule-826387.postman.co/workspace/ec827078-fa2d-4116-8a8a-090f11fd3b09/collection/26857480-38a90ecb-c453-4bf0-a18f-23d18c1b1a7c?action=share&creator=26857480&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Get_Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "8cd9fc3f165f45a2ad01be0beb6848e3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "5b65a3a6e58344569b4ad55b078832a8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://accounts.spotify.com/api/token",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"api",
+						"token"
+					]
+				},
+				"description": "Esta APi require entrar a la pagina de sptofy API crear una aplicacion crear obtener el API key y el Secret y usarlos en Username y password respectivmente en la seccion de Auth en el Get_Token Request"
+			},
+			"response": []
+		},
+		{
+			"name": "get_playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQAxmxtpGzUMKJFITUk0lNdlQsiCp16qHtly2tDivLFdl-5OQohM8ZDkr_n-wJ9ksYHhV5w5OYKksapbzWLVhcbUkPNDve3GH6IHUF3JPJuTy4ck24g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/users/31iuc2sekkrdwblysqzq5c7q6brm/playlists?limit=5",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"users",
+						"31iuc2sekkrdwblysqzq5c7q6brm",
+						"playlists"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_track",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQAxmxtpGzUMKJFITUk0lNdlQsiCp16qHtly2tDivLFdl-5OQohM8ZDkr_n-wJ9ksYHhV5w5OYKksapbzWLVhcbUkPNDve3GH6IHUF3JPJuTy4ck24g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/tracks/4nrPB8O7Y7wsOCJdgXkthe",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tracks",
+						"4nrPB8O7Y7wsOCJdgXkthe"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
